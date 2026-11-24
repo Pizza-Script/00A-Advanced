@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ctar26kgko6r4"]
+
+[ext_resource type="FontFile" uid="uid://c8l7ayhvgs8ib" path="res://00 Core/E Assets/Fonts/monogram.ttf" id="1_6ovro"]
+[ext_resource type="Script" uid="uid://didqjrl6ijbu5" path="res://00 Core/D Scenes/MyTimer/my_timer.gd" id="2_v0248"]
+
+[node name="MyTimer" type="Label" unique_id=487006968]
+offset_right = 1.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("1_6ovro")
+text = "10:00"
+script = ExtResource("2_v0248")

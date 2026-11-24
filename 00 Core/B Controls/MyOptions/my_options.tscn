@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bbulx8o140wuv"]
+
+[ext_resource type="Script" uid="uid://pifu0ofibjor" path="res://00 Core/B Controls/MyOptions/my_options.gd" id="1_l60ku"]
+[ext_resource type="LabelSettings" uid="uid://bpwrgbrynbirg" path="res://00 Core/E Assets/Fonts/my_label.tres" id="2_0mj75"]
+[ext_resource type="Texture2D" uid="uid://dymwn4ww13ncc" path="res://00 Core/B Controls/MyOptions/Texture/left.png" id="2_71wrj"]
+[ext_resource type="Script" uid="uid://j4mokvq7k3q3" path="res://00 Core/B Controls/MyButton/my_button.gd" id="4_qajsj"]
+[ext_resource type="Texture2D" uid="uid://bp4ligppen3h8" path="res://00 Core/B Controls/MyOptions/Texture/right.png" id="5_8k4yn"]
+
+[node name="MyOptions" type="Control" unique_id=146623055]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 112.0
+offset_bottom = 8.0
+script = ExtResource("1_l60ku")
+_label_settings = ExtResource("2_0mj75")
+
+[node name="Label" type="Label" parent="." unique_id=487600144]
+layout_mode = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 35.0
+offset_bottom = 4.0
+text = "OPTION"
+label_settings = ExtResource("2_0mj75")
+
+[node name="Options" type="Label" parent="." unique_id=954989007]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -5.0
+offset_bottom = 3.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(1, 0.5)
+text = "INDEX"
+label_settings = ExtResource("2_0mj75")
+horizontal_alignment = 1
+
+[node name="BtnLeft" type="TextureButton" parent="." unique_id=1328181430]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -9.0
+offset_right = -47.0
+offset_bottom = 7.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_71wrj")
+script = ExtResource("4_qajsj")
+
+[node name="BtnRight" type="TextureButton" parent="." unique_id=1087568794]
+process_mode = 3
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -9.0
+offset_right = 5.0
+offset_bottom = 7.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_8k4yn")
+script = ExtResource("4_qajsj")

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d25tyl10m6pqq"]
+
+[ext_resource type="Script" uid="uid://saoe8bd71fx" path="res://00 Core/D Scenes/Menu/MenuAudio/menu_audio.gd" id="1_s51vv"]
+[ext_resource type="Texture2D" uid="uid://c1e1xf0usfw0u" path="res://00 Core/D Scenes/Menu/MenuAudio/menu_audio_0.png" id="2_upwa7"]
+[ext_resource type="Texture2D" uid="uid://lesbo7kbxrry" path="res://00 Core/D Scenes/Menu/MenuAudio/menu_audio_1.png" id="3_xl4gu"]
+[ext_resource type="Texture2D" uid="uid://c4ixi13mejhy8" path="res://00 Core/D Scenes/Menu/MenuAudio/menu_audio_2.png" id="4_ycflp"]
+[ext_resource type="Script" uid="uid://j4mokvq7k3q3" path="res://00 Core/B Controls/MyButton/my_button.gd" id="5_equn7"]
+
+[node name="MenuAudio" type="Control" unique_id=1837159934]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 32.0
+mouse_filter = 1
+script = ExtResource("1_s51vv")
+_audio_0 = ExtResource("2_upwa7")
+_audio_1 = ExtResource("3_xl4gu")
+_audio_2 = ExtResource("4_ycflp")
+
+[node name="BtnAudio" type="TextureButton" parent="." unique_id=1084009925]
+process_mode = 3
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+focus_mode = 0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_ycflp")
+script = ExtResource("5_equn7")

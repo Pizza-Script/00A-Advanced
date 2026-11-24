@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cnw368rqgv7y0"]
+
+[ext_resource type="Script" uid="uid://dsyhlbw8n1e38" path="res://00 Core/D Scenes/Menu/MenuReset/menu_reset.gd" id="1_3iati"]
+[ext_resource type="Texture2D" uid="uid://hcbqa6dydwju" path="res://00 Core/D Scenes/Menu/MenuButtons/reset.png" id="2_hj1mt"]
+[ext_resource type="Script" uid="uid://j4mokvq7k3q3" path="res://00 Core/B Controls/MyButton/my_button.gd" id="3_nfhql"]
+[ext_resource type="Texture2D" uid="uid://dp74qy72jnmrp" path="res://00 Core/B Controls/MyProgressCircle/my_progress_circle.png" id="4_dty85"]
+[ext_resource type="Script" uid="uid://4uuqtm6h10vj" path="res://00 Core/B Controls/MyProgressCircle/my_progress_circle.gd" id="5_2fb0g"]
+
+[node name="MenuReset" type="Control" unique_id=1577430107]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_3iati")
+start_hidden = false
+
+[node name="BtnReset" type="TextureButton" parent="." unique_id=1943687693]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -24.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 24.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_hj1mt")
+script = ExtResource("3_nfhql")
+
+[node name="PrgCircle" type="TextureProgressBar" parent="." unique_id=1061553835]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_bottom = 32.0
+grow_horizontal = 0
+mouse_filter = 2
+fill_mode = 4
+texture_progress = ExtResource("4_dty85")
+script = ExtResource("5_2fb0g")

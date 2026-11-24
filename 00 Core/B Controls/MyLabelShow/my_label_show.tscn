@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://rxkaeeyabjbm"]
+
+[ext_resource type="Script" uid="uid://csr0rvhr4esco" path="res://00 Core/B Controls/MyLabelShow/my_label_show.gd" id="1_a3u3e"]
+[ext_resource type="LabelSettings" uid="uid://bpwrgbrynbirg" path="res://00 Core/E Assets/Fonts/my_label.tres" id="1_i5ytv"]
+
+[node name="MyLabelShow" type="Label" unique_id=1056832875]
+offset_right = 42.0
+offset_bottom = 8.0
+text = "MY LABEL SHOW"
+label_settings = ExtResource("1_i5ytv")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_a3u3e")

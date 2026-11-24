@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bvvan3pgc5ntv"]
+
+[ext_resource type="Texture2D" uid="uid://dp74qy72jnmrp" path="res://00 Core/B Controls/MyProgressCircle/my_progress_circle.png" id="1_wjhgw"]
+[ext_resource type="Script" uid="uid://4uuqtm6h10vj" path="res://00 Core/B Controls/MyProgressCircle/my_progress_circle.gd" id="2_ikvjs"]
+
+[node name="PrgCircle" type="TextureProgressBar" unique_id=537506849]
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 2
+fill_mode = 4
+texture_progress = ExtResource("1_wjhgw")
+script = ExtResource("2_ikvjs")
+_key_shortcut = true

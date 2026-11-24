@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://3pp2f80qoge8"]
+
+[ext_resource type="Script" uid="uid://cd84us2fe5fov" path="res://00 Core/D Scenes/Menu/MenuButtons/menu_buttons.gd" id="1_0l3jg"]
+[ext_resource type="Texture2D" uid="uid://5dmweh1ggbx1" path="res://00 Core/D Scenes/Menu/MenuButtons/play.png" id="2_x7p0e"]
+[ext_resource type="Script" uid="uid://j4mokvq7k3q3" path="res://00 Core/B Controls/MyButton/my_button.gd" id="3_3kbw6"]
+[ext_resource type="Texture2D" uid="uid://crmuvmokest0s" path="res://00 Core/D Scenes/Menu/MenuButtons/pause.png" id="4_apa6m"]
+[ext_resource type="Texture2D" uid="uid://hcbqa6dydwju" path="res://00 Core/D Scenes/Menu/MenuButtons/reset.png" id="5_wsb3n"]
+[ext_resource type="Texture2D" uid="uid://dp74qy72jnmrp" path="res://00 Core/B Controls/MyProgressCircle/my_progress_circle.png" id="6_6if1n"]
+[ext_resource type="Script" uid="uid://4uuqtm6h10vj" path="res://00 Core/B Controls/MyProgressCircle/my_progress_circle.gd" id="7_pfr3v"]
+[ext_resource type="LabelSettings" uid="uid://bpwrgbrynbirg" path="res://00 Core/E Assets/Fonts/my_label.tres" id="9_pfr3v"]
+
+[node name="MenuButtons" type="Control" unique_id=529795116]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_0l3jg")
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1147752086]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -24.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 88.0
+grow_horizontal = 0
+theme_override_constants/separation = 16
+
+[node name="BtnPlay" type="TextureButton" parent="Buttons" unique_id=377699654]
+process_mode = 3
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_x7p0e")
+script = ExtResource("3_3kbw6")
+
+[node name="BtnPause" type="TextureButton" parent="Buttons" unique_id=1222385916]
+process_mode = 3
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_apa6m")
+script = ExtResource("3_3kbw6")
+
+[node name="BtnReset" type="TextureButton" parent="Buttons" unique_id=1297452794]
+process_mode = 3
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_wsb3n")
+script = ExtResource("3_3kbw6")
+
+[node name="PrgCircle" type="TextureProgressBar" parent="Buttons/BtnReset" unique_id=1290453125]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+fill_mode = 4
+texture_progress = ExtResource("6_6if1n")
+script = ExtResource("7_pfr3v")
+
+[node name="Messages" type="VBoxContainer" parent="." unique_id=1433733344]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="LblPaused" type="Label" parent="Messages" unique_id=1797383864]
+layout_mode = 2
+text = "Paused"
+label_settings = ExtResource("9_pfr3v")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LblMiddle" type="Label" parent="Messages" unique_id=76236109]
+layout_mode = 2
+text = "Space to Start"
+label_settings = ExtResource("9_pfr3v")
+horizontal_alignment = 1
+uppercase = true

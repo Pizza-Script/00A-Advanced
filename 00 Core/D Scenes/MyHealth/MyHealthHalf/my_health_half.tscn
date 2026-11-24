@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://co7idxu66y7tm"]
+
+[ext_resource type="Script" uid="uid://caskmj4sgexpk" path="res://00 Core/D Scenes/MyHealth/MyHealthHalf/my_health_half.gd" id="1_m4e53"]
+[ext_resource type="Texture2D" uid="uid://dh4euvntdsuxd" path="res://00 Core/D Scenes/MyHealth/MyHealthHalf/health_full.png" id="2_ghmtq"]
+[ext_resource type="Texture2D" uid="uid://b3cxqgfdp4ngb" path="res://00 Core/D Scenes/MyHealth/MyHealthHalf/health_half.png" id="3_ghmtq"]
+[ext_resource type="Texture2D" uid="uid://eh8xwptodtrp" path="res://00 Core/D Scenes/MyHealth/MyHealthHalf/health_base.png" id="4_hdhs1"]
+
+[node name="MyHealthHalf" type="HBoxContainer"]
+script = ExtResource("1_m4e53")
+_texture_full = ExtResource("2_ghmtq")
+_texture_half = ExtResource("3_ghmtq")
+_texture_base = ExtResource("4_hdhs1")

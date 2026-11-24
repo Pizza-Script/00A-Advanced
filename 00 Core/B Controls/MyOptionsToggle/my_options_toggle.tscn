@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://d2guxixxwqtp2"]
+
+[ext_resource type="Script" uid="uid://cxr3yyyb4yncy" path="res://00 Core/B Controls/MyOptionsToggle/my_options_toggle.gd" id="1_wo3vs"]
+[ext_resource type="FontFile" uid="uid://duxainnndtyei" path="res://00 Core/E Assets/Fonts/5x5 mono.ttf" id="2_pwcdk"]
+[ext_resource type="PackedScene" uid="uid://cermu2kxhjon5" path="res://00 Core/B Controls/MyButtonLabel/my_button_label.tscn" id="3_dhx5v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g8isy"]
+font = ExtResource("2_pwcdk")
+font_size = 8
+
+[node name="MyOptionsToggle" type="Control" unique_id=146623055]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 112.0
+offset_bottom = 8.0
+script = ExtResource("1_wo3vs")
+_options = PackedStringArray("INDEX", "LIFETIME")
+_label_settings = SubResource("LabelSettings_g8isy")
+
+[node name="Label" type="Label" parent="." unique_id=487600144]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_right = 36.0
+offset_bottom = 4.0
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-1, 0)
+text = "OPTION"
+label_settings = SubResource("LabelSettings_g8isy")
+
+[node name="MyButtonLabel" parent="." unique_id=742443023 instance=ExtResource("3_dhx5v")]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_right = 0.0
+offset_bottom = 0.0
+_title = "INDEX"
+_alignment_x = 2

@@ -1,0 +1,53 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="00A Advanced"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[autoload]
+
+MyCore="*res://00 Core/A Globals/my_core.gd"
+MyDraw="*res://00 Core/A Globals/my_draw.gd"
+MyGrid="*res://00 Core/A Globals/my_grid.gd"
+MyNode="*res://00 Core/A Globals/my_node.gd"
+MyRand="*res://00 Core/A Globals/my_rand.gd"
+MySave="*res://00 Core/A Globals/my_save.gd"
+MyUtil="*res://00 Core/A Globals/my_util.gd"
+
+[debug]
+
+gdscript/warnings/integer_division="ignore"
+
+[display]
+
+window/size/viewport_width=640.0
+window/size/viewport_height=360.0
+window/size/window_width_override=1280.0
+window/size/window_height_override=720.0
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_git/plugin.cfg", "res://addons/my_ide/plugin.cfg", "res://addons/my_menu/plugin.cfg", "res://addons/my_split/plugin.cfg")
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter="0"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.22745098, 0.26666668, 0.4, 1)

@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://esckbvgfrtfn"]
+
+[ext_resource type="Script" uid="uid://dxqf0p2qrwqwe" path="res://main.gd" id="1_4wuhs"]
+[ext_resource type="Script" uid="uid://c7dbwwyneposg" path="res://00 Core/A Globals/my_core.gd" id="3_dg77c"]
+[ext_resource type="Script" uid="uid://hsmave4dhjxo" path="res://00 Core/A Globals/my_draw.gd" id="4_kek77"]
+[ext_resource type="Script" uid="uid://ch661gnn7q5oo" path="res://00 Core/A Globals/my_rand.gd" id="5_4c57u"]
+[ext_resource type="Script" uid="uid://dlbcsxejb314d" path="res://00 Core/A Globals/my_grid.gd" id="6_efxa6"]
+[ext_resource type="Script" uid="uid://cfahqhabtyypq" path="res://00 Core/A Globals/global.gd" id="7_272bh"]
+[ext_resource type="Script" uid="uid://dqdk0pvrx7rjv" path="res://00 Core/A Globals/my_node.gd" id="7_ycdy4"]
+[ext_resource type="Script" uid="uid://b3or3a67hfn6v" path="res://00 Core/A Globals/my_save.gd" id="8_dg77c"]
+[ext_resource type="Script" uid="uid://cwtw8vemtuw7x" path="res://00 Core/A Globals/my_util.gd" id="9_ycdy4"]
+[ext_resource type="Script" uid="uid://7lxshx4cy6ol" path="res://00 Core/C Customs/Nodes/my_camera_input.gd" id="10_w48qg"]
+[ext_resource type="Script" uid="uid://clc8q634v0pyq" path="res://my_skybox.gd" id="11_vivmo"]
+[ext_resource type="Script" uid="uid://bgovwayu7fxko" path="res://00 Core/C Customs/Nodes/my_view.gd" id="12_dg77c"]
+[ext_resource type="Script" uid="uid://b4gugffhw18a5" path="res://custom_debug.gd" id="13_vivmo"]
+[ext_resource type="Texture2D" uid="uid://lwa5g234rdkk" path="res://00 Core/E Assets/Background/bg_16.png" id="13_w48qg"]
+
+[node name="Main" type="Node2D" unique_id=1053679075]
+script = ExtResource("1_4wuhs")
+
+[node name="Global" type="Node" parent="." unique_id=1144424444]
+script = ExtResource("7_272bh")
+
+[node name="MyCore" type="Node" parent="Global" unique_id=486590831]
+script = ExtResource("3_dg77c")
+
+[node name="MyDraw" type="Node" parent="Global" unique_id=1735831602]
+script = ExtResource("4_kek77")
+
+[node name="MyGrid" type="Node" parent="Global" unique_id=323802205]
+script = ExtResource("6_efxa6")
+
+[node name="MyNode" type="Node" parent="Global" unique_id=437800439]
+script = ExtResource("7_ycdy4")
+
+[node name="MyRand" type="Node" parent="Global" unique_id=452821926]
+script = ExtResource("5_4c57u")
+
+[node name="MySave" type="Node" parent="Global" unique_id=1973256458]
+script = ExtResource("8_dg77c")
+
+[node name="MyUtil" type="Node" parent="Global" unique_id=1605373789]
+script = ExtResource("9_ycdy4")
+
+[node name="MyCamera" type="Camera2D" parent="." unique_id=509473191]
+script = ExtResource("10_w48qg")
+_zoom_in_limit = 2
+
+[node name="Skybox" type="CanvasLayer" parent="." unique_id=1189834646]
+
+[node name="MySkybox" type="ColorRect" parent="Skybox" unique_id=646860480]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.011764706, 0.06666667, 0.023529412, 0.6156863)
+script = ExtResource("11_vivmo")
+metadata/_edit_lock_ = true
+
+[node name="World" type="CanvasLayer" parent="." unique_id=788011128]
+follow_viewport_enabled = true
+
+[node name="Background" type="TextureRect" parent="World" unique_id=2045015422]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_w48qg")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Draw" type="Node2D" parent="World" unique_id=520013943]
+script = ExtResource("13_vivmo")
+
+[node name="View" type="CanvasLayer" parent="." unique_id=1765714307]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+
+[node name="MyView" type="Control" parent="View" unique_id=478113705]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("12_dg77c")

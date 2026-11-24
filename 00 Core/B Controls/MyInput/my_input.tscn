@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://fudn7c8b4u3v"]
+
+[ext_resource type="FontFile" uid="uid://duxainnndtyei" path="res://00 Core/E Assets/Fonts/5x5 mono.ttf" id="1_r544w"]
+[ext_resource type="Script" uid="uid://coh2xva7ai7bq" path="res://00 Core/B Controls/MyInput/my_input.gd" id="2_esi7x"]
+[ext_resource type="StyleBox" uid="uid://s21e4fwdx5c2" path="res://00 Core/B Controls/MyInput/my_input.tres" id="2_xttav"]
+
+[node name="MyInput" type="LineEdit"]
+offset_right = 112.0
+offset_bottom = 16.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("1_r544w")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("2_xttav")
+theme_override_styles/focus = ExtResource("2_xttav")
+text = "INPUT"
+keep_editing_on_text_submit = true
+emoji_menu_enabled = false
+script = ExtResource("2_esi7x")

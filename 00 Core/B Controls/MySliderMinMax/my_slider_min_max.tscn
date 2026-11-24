@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://c4wji2n413bjn"]
+
+[ext_resource type="Script" uid="uid://i3etctira32w" path="res://00 Core/B Controls/MySliderMinMax/my_slider_min_max.gd" id="1_u71by"]
+[ext_resource type="Texture2D" uid="uid://fvs2dgi6qe8o" path="res://00 Core/B Controls/MySliderMinMax/Texture/slider_min.png" id="2_ddypy"]
+[ext_resource type="LabelSettings" uid="uid://bpwrgbrynbirg" path="res://00 Core/E Assets/Fonts/my_label.tres" id="2_ebnri"]
+[ext_resource type="Texture2D" uid="uid://bwtul47nsxd1k" path="res://00 Core/B Controls/MySliderMinMax/Texture/slider_max.png" id="3_5ksgm"]
+[ext_resource type="Script" uid="uid://j4mokvq7k3q3" path="res://00 Core/B Controls/MyButton/my_button.gd" id="4_s2qei"]
+[ext_resource type="Texture2D" uid="uid://qqkbouevruyv" path="res://00 Core/B Controls/MySliderMinMax/Texture/reset.png" id="5_30ldb"]
+[ext_resource type="Texture2D" uid="uid://bpghrwno8kfto" path="res://00 Core/B Controls/MySliderMinMax/Texture/slider_bar.png" id="6_anwkx"]
+[ext_resource type="Texture2D" uid="uid://dk24beeci8vwj" path="res://00 Core/B Controls/MySliderMinMax/Texture/slider_box.png" id="7_o4rgr"]
+
+[node name="MySliderMinMax" type="Control" unique_id=1451573831]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 112.0
+offset_bottom = 28.0
+mouse_filter = 2
+script = ExtResource("1_u71by")
+_label_settings = ExtResource("2_ebnri")
+
+[node name="Labels" type="Control" parent="." unique_id=2060448424]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="LblTitle" type="Label" parent="Labels" unique_id=63837333]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = -1.0
+offset_bottom = 6.0
+grow_horizontal = 2
+text = "MIN MAX"
+label_settings = ExtResource("2_ebnri")
+
+[node name="BtnReset" type="TextureButton" parent="Labels" unique_id=461833851]
+modulate = Color(1, 1, 1, 0.29411766)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -13.0
+offset_top = -5.0
+offset_right = 3.0
+offset_bottom = 11.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 8
+disabled = true
+texture_normal = ExtResource("5_30ldb")
+script = ExtResource("4_s2qei")
+
+[node name="Slider" type="Control" parent="." unique_id=132638715]
+modulate = Color(1, 1, 1, 0.6862745)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Bar" type="Control" parent="Slider" unique_id=684505263]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -4.0
+offset_right = -55.5
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ImgBar" type="TextureRect" parent="Slider/Bar" unique_id=2049481688]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_anwkx")
+
+[node name="ImgMin" type="TextureRect" parent="Slider" unique_id=584078644]
+self_modulate = Color(0.25490198, 0.6509804, 0.9647059, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 52.0
+offset_top = -4.0
+offset_right = 58.0
+offset_bottom = 4.0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("2_ddypy")
+stretch_mode = 2
+
+[node name="ImgMax" type="TextureRect" parent="Slider" unique_id=1329895427]
+self_modulate = Color(0.654902, 0.9411765, 0.4392157, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 54.0
+offset_top = -4.0
+offset_right = 60.0
+offset_bottom = 4.0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("3_5ksgm")
+stretch_mode = 2
+
+[node name="ImgBox" type="NinePatchRect" parent="Slider" unique_id=344795539]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_o4rgr")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Values" type="Control" parent="." unique_id=2121377156]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="LblMin" type="Label" parent="Values" unique_id=960430211]
+self_modulate = Color(0.25490198, 0.6509804, 0.9647059, 1)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -7.0
+offset_right = 17.0
+offset_bottom = 1.0
+grow_vertical = 0
+text = "0.0"
+label_settings = ExtResource("2_ebnri")
+
+[node name="LblMax" type="Label" parent="Values" unique_id=93420287]
+self_modulate = Color(0.654902, 0.9411765, 0.4392157, 1)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -7.0
+offset_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "0.0"
+label_settings = ExtResource("2_ebnri")
+horizontal_alignment = 2

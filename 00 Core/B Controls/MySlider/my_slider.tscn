@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dtx6756kbb0vq"]
+
+[ext_resource type="Script" uid="uid://dko6vh6aei3wj" path="res://00 Core/B Controls/MySlider/my_slider.gd" id="1_og5xk"]
+[ext_resource type="LabelSettings" uid="uid://bpwrgbrynbirg" path="res://00 Core/E Assets/Fonts/my_label.tres" id="2_0w6ml"]
+[ext_resource type="Texture2D" uid="uid://decyr0oba0u5n" path="res://00 Core/B Controls/MySlider/Texture/grabber_W.png" id="3_0w6ml"]
+[ext_resource type="Texture2D" uid="uid://dnn2pkehvds8b" path="res://00 Core/B Controls/MySlider/Texture/grabber_W_hover.png" id="4_outog"]
+[ext_resource type="StyleBox" uid="uid://dljllv12xo6ci" path="res://00 Core/B Controls/MySlider/Style/style.tres" id="5_qkyr4"]
+[ext_resource type="StyleBox" uid="uid://cu7o1mjqq16qt" path="res://00 Core/B Controls/MySlider/Style/style_grabber.tres" id="6_wxj7e"]
+[ext_resource type="StyleBox" uid="uid://bf076vuypiwba" path="res://00 Core/B Controls/MySlider/Style/style_grabber_highlight.tres" id="7_fxr6o"]
+[ext_resource type="Texture2D" uid="uid://bdyr7t7og2a67" path="res://00 Core/B Controls/MySlider/Texture/reset.png" id="8_nvn50"]
+[ext_resource type="Script" uid="uid://j4mokvq7k3q3" path="res://00 Core/B Controls/MyButton/my_button.gd" id="9_13urg"]
+
+[node name="MySlider" type="Control" unique_id=772621511]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 112.0
+offset_bottom = 20.0
+script = ExtResource("1_og5xk")
+_label_settings = ExtResource("2_0w6ml")
+
+[node name="LblTitle" type="Label" parent="." unique_id=543654460]
+layout_mode = 1
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 35.0
+offset_bottom = 6.0
+text = "SLIDER"
+label_settings = ExtResource("2_0w6ml")
+
+[node name="LblValue" type="Label" parent="." unique_id=365533391]
+self_modulate = Color(0.654902, 0.9411765, 0.4392157, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_top = -2.0
+offset_right = -12.0
+offset_bottom = 6.0
+grow_horizontal = 0
+text = "  0.0"
+label_settings = ExtResource("2_0w6ml")
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="." unique_id=1324264672]
+modulate = Color(1, 1, 1, 0.6862745)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_icons/grabber = ExtResource("3_0w6ml")
+theme_override_icons/grabber_highlight = ExtResource("4_outog")
+theme_override_icons/grabber_disabled = ExtResource("3_0w6ml")
+theme_override_styles/slider = ExtResource("5_qkyr4")
+theme_override_styles/grabber_area = ExtResource("6_wxj7e")
+theme_override_styles/grabber_area_highlight = ExtResource("7_fxr6o")
+min_value = -100.0
+
+[node name="BtnReset" type="TextureButton" parent="." unique_id=295251296]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -13.0
+offset_top = -5.0
+offset_right = 3.0
+offset_bottom = 11.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+disabled = true
+texture_normal = ExtResource("8_nvn50")
+script = ExtResource("9_13urg")

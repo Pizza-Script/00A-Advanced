@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dgwnggkm62xsu"]
+
+[ext_resource type="Script" uid="uid://dh4jgac80qfae" path="res://00 Core/D Scenes/MyHealth/MyHealth/my_health.gd" id="1_fa511"]
+[ext_resource type="Texture2D" uid="uid://d21ffnk3ut1co" path="res://00 Core/D Scenes/MyHealth/MyHealth/health_full.png" id="2_rmm31"]
+[ext_resource type="Texture2D" uid="uid://clch054e5ywty" path="res://00 Core/D Scenes/MyHealth/MyHealth/health_base.png" id="4_jdiph"]
+
+[node name="MyHealth" type="HBoxContainer"]
+script = ExtResource("1_fa511")
+_texture_full = ExtResource("2_rmm31")
+_texture_base = ExtResource("4_jdiph")

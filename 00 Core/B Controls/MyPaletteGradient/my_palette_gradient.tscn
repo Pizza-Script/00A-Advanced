@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://w4iicwgoar3v"]
+
+[ext_resource type="Script" uid="uid://bgjcqith1xwon" path="res://00 Core/B Controls/MyPaletteGradient/my_palette_gradient.gd" id="1_jhs3p"]
+[ext_resource type="LabelSettings" uid="uid://bpwrgbrynbirg" path="res://00 Core/E Assets/Fonts/my_label.tres" id="2_rgpre"]
+[ext_resource type="Texture2D" uid="uid://deugrrlnjt63t" path="res://00 Core/B Controls/MyPaletteGradient/Texture/left.png" id="3_5fowf"]
+[ext_resource type="Script" uid="uid://j4mokvq7k3q3" path="res://00 Core/B Controls/MyButton/my_button.gd" id="6_d6qn1"]
+[ext_resource type="Texture2D" uid="uid://my3mj0hjwlot" path="res://00 Core/B Controls/MyPaletteGradient/Texture/right.png" id="9_rhx43"]
+
+[node name="MyPaletteGradient" type="Control" unique_id=550087362]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 112.0
+offset_bottom = 8.0
+script = ExtResource("1_jhs3p")
+_label_settings = ExtResource("2_rgpre")
+
+[node name="Label" type="Label" parent="." unique_id=819984917]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 47.0
+offset_bottom = 4.0
+grow_vertical = 2
+text = "GRADIENT"
+label_settings = ExtResource("2_rgpre")
+
+[node name="ColorA" type="ColorRect" parent="." unique_id=2131552201]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -4.0
+offset_right = -38.0
+offset_bottom = 4.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="BtnLeftA" type="TextureButton" parent="." unique_id=1168148843]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -8.0
+offset_right = -44.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_5fowf")
+script = ExtResource("6_d6qn1")
+
+[node name="BtnRightA" type="TextureButton" parent="." unique_id=1282274101]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -8.0
+offset_right = -24.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_rhx43")
+script = ExtResource("6_d6qn1")
+
+[node name="ColorB" type="ColorRect" parent="." unique_id=551420197]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -4.0
+offset_right = -9.0
+offset_bottom = 4.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="BtnLeftB" type="TextureButton" parent="." unique_id=1488101419]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -8.0
+offset_right = -15.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_5fowf")
+script = ExtResource("6_d6qn1")
+
+[node name="BtnRightB" type="TextureButton" parent="." unique_id=1173476543]
+process_mode = 3
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -8.0
+offset_right = 5.0
+offset_bottom = 8.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_rhx43")
+script = ExtResource("6_d6qn1")

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cermu2kxhjon5"]
+
+[ext_resource type="Script" uid="uid://0evux0u34wfj" path="res://00 Core/B Controls/MyButtonLabel/my_button_label.gd" id="1_7y54w"]
+[ext_resource type="LabelSettings" uid="uid://bpwrgbrynbirg" path="res://00 Core/E Assets/Fonts/my_label.tres" id="2_5qvwh"]
+
+[node name="MyButtonLabel" type="TextureButton" unique_id=742443023]
+process_mode = 3
+offset_right = 64.0
+offset_bottom = 8.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+script = ExtResource("1_7y54w")
+_label_settings = ExtResource("2_5qvwh")
+
+[node name="Label" type="Label" parent="." unique_id=827733494]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-1, 0)
+text = "LABEL"
+label_settings = ExtResource("2_5qvwh")
+horizontal_alignment = 1
+vertical_alignment = 1

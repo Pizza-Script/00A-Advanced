@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://bd7dx2kb1aglc"]
+
+[ext_resource type="PackedScene" uid="uid://bwnnq5ept6k5s" path="res://00 Core/B Controls/MyButtonBg/my_button_bg.tscn" id="1_c8kh6"]
+[ext_resource type="PackedScene" uid="uid://cbb2a0hih5r1h" path="res://00 Core/B Controls/MyButton/my_button.tscn" id="1_jy83f"]
+[ext_resource type="FontFile" uid="uid://duxainnndtyei" path="res://00 Core/E Assets/Fonts/5x5 mono.ttf" id="2_0yhtg"]
+[ext_resource type="Texture2D" uid="uid://dtkqp7kpuenxy" path="res://00 Core/E Assets/Circles/green.png" id="2_c65y2"]
+[ext_resource type="PackedScene" uid="uid://cer010g53uc70" path="res://00 Core/B Controls/MyCheckBox/my_check_box.tscn" id="3_jy83f"]
+[ext_resource type="ButtonGroup" uid="uid://ce58i23aybx78" path="res://00 Core/B Controls/MyCheckRadio/my_check_radio_group.tres" id="4_c65y2"]
+[ext_resource type="PackedScene" uid="uid://cermu2kxhjon5" path="res://00 Core/B Controls/MyButtonLabel/my_button_label.tscn" id="5_c65y2"]
+[ext_resource type="PackedScene" uid="uid://dlpajhgov1bhe" path="res://00 Core/B Controls/MyCheckRadio/my_check_radio.tscn" id="5_jfm1p"]
+[ext_resource type="PackedScene" uid="uid://rmbr1xasx0nc" path="res://00 Core/B Controls/MyCounter/my_counter.tscn" id="6_s3lkd"]
+[ext_resource type="PackedScene" uid="uid://cf815vmb5xaf3" path="res://00 Core/B Controls/MyCounterFour/my_counter_four.tscn" id="7_osy8j"]
+[ext_resource type="PackedScene" uid="uid://fudn7c8b4u3v" path="res://00 Core/B Controls/MyInput/my_input.tscn" id="8_kuvqq"]
+[ext_resource type="PackedScene" uid="uid://copqtn23jftu" path="res://00 Core/B Controls/MyLabelCopy/my_label_copy.tscn" id="9_iqtbe"]
+[ext_resource type="PackedScene" uid="uid://rxkaeeyabjbm" path="res://00 Core/B Controls/MyLabelShow/my_label_show.tscn" id="10_wmgty"]
+[ext_resource type="PackedScene" uid="uid://bbulx8o140wuv" path="res://00 Core/B Controls/MyOptions/my_options.tscn" id="11_e835q"]
+[ext_resource type="PackedScene" uid="uid://cnburdj3g3vwb" path="res://00 Core/B Controls/MyGuide/my_guide.tscn" id="11_jfm1p"]
+[ext_resource type="PackedScene" uid="uid://d0hsjj6slid10" path="res://00 Core/B Controls/MyPalette/my_palette.tscn" id="12_uau4t"]
+[ext_resource type="PackedScene" uid="uid://w4iicwgoar3v" path="res://00 Core/B Controls/MyPaletteGradient/my_palette_gradient.tscn" id="13_mfrad"]
+[ext_resource type="PackedScene" uid="uid://dtx6756kbb0vq" path="res://00 Core/B Controls/MySlider/my_slider.tscn" id="14_jpls8"]
+[ext_resource type="PackedScene" uid="uid://c4wji2n413bjn" path="res://00 Core/B Controls/MySliderMinMax/my_slider_min_max.tscn" id="15_dwi0b"]
+[ext_resource type="PackedScene" uid="uid://1lmlvb6sr4o4" path="res://00 Core/B Controls/MySliderVector/my_slider_vector.tscn" id="16_cyq4s"]
+[ext_resource type="PackedScene" uid="uid://cx7axbpkev13d" path="res://00 Core/B Controls/MyOptionsDropdown/my_options_dropdown.tscn" id="16_osy8j"]
+[ext_resource type="PackedScene" uid="uid://d2guxixxwqtp2" path="res://00 Core/B Controls/MyOptionsToggle/my_options_toggle.tscn" id="17_kuvqq"]
+[ext_resource type="PackedScene" uid="uid://bvvan3pgc5ntv" path="res://00 Core/B Controls/MyProgressCircle/my_progress_circle.tscn" id="20_kuvqq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1u8w0"]
+font = ExtResource("2_0yhtg")
+font_size = 8
+
+[node name="AllControls" type="Control" unique_id=1478685164]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Button" parent="." unique_id=742443023 instance=ExtResource("1_jy83f")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 32.0
+offset_bottom = 32.0
+texture_normal = ExtResource("2_c65y2")
+
+[node name="MyButtonBg" parent="." unique_id=1022440833 instance=ExtResource("1_c8kh6")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 16.0
+offset_right = 128.0
+offset_bottom = 24.0
+_image = null
+_label_settings = SubResource("LabelSettings_1u8w0")
+
+[node name="MyButtonLabel" parent="." unique_id=121444687 instance=ExtResource("5_c65y2")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 40.0
+_title = "BUTTON LABEL"
+
+[node name="MyCheckBox" parent="." unique_id=510209226 instance=ExtResource("3_jy83f")]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 48.0
+offset_right = 122.0
+offset_bottom = 64.0
+button_group = ExtResource("4_c65y2")
+
+[node name="MyCheckRadio" parent="." unique_id=1469715982 instance=ExtResource("5_jfm1p")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 120.0
+offset_bottom = 80.0
+button_pressed = true
+_is_checked = true
+
+[node name="MyCheckRadio2" parent="." unique_id=1064276420 instance=ExtResource("5_jfm1p")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 120.0
+offset_bottom = 96.0
+
+[node name="MyCheckRadio3" parent="." unique_id=367880684 instance=ExtResource("5_jfm1p")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 120.0
+offset_bottom = 112.0
+
+[node name="MyCounter" parent="." unique_id=1831817900 instance=ExtResource("6_s3lkd")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 128.0
+offset_right = 128.0
+offset_bottom = 144.0
+
+[node name="MyCounterFour" parent="." unique_id=60179964 instance=ExtResource("7_osy8j")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 160.0
+offset_right = 128.0
+offset_bottom = 184.0
+
+[node name="MyGuide" parent="." unique_id=2066576823 instance=ExtResource("11_jfm1p")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 192.0
+offset_right = 128.0
+offset_bottom = 208.0
+
+[node name="MyInput" parent="." unique_id=828815797 instance=ExtResource("8_kuvqq")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 216.0
+offset_right = 128.0
+offset_bottom = 232.0
+
+[node name="MyLabelCopy" parent="." unique_id=101876145 instance=ExtResource("9_iqtbe")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 240.0
+offset_right = 94.0
+offset_bottom = 256.0
+
+[node name="MyLabelShow" parent="." unique_id=1056832875 instance=ExtResource("10_wmgty")]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 256.0
+offset_right = 94.0
+offset_bottom = 272.0
+
+[node name="MyOptions" parent="." unique_id=146623055 instance=ExtResource("11_e835q")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 16.0
+offset_right = 256.0
+offset_bottom = 24.0
+_key_shortcuts = true
+
+[node name="MyOptionsDropdown" parent="." unique_id=2058895452 instance=ExtResource("16_osy8j")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 32.0
+offset_right = 256.0
+offset_bottom = 40.0
+
+[node name="MyOptionsToggle" parent="." unique_id=551245058 instance=ExtResource("17_kuvqq")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 48.0
+offset_right = 256.0
+offset_bottom = 56.0
+
+[node name="MyPalette" parent="." unique_id=641335859 instance=ExtResource("12_uau4t")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 64.0
+offset_right = 256.0
+offset_bottom = 80.0
+
+[node name="MyPaletteGradient" parent="." unique_id=550087362 instance=ExtResource("13_mfrad")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 80.0
+offset_right = 256.0
+offset_bottom = 96.0
+
+[node name="PrgCircle" parent="." unique_id=537506849 instance=ExtResource("20_kuvqq")]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 104.0
+offset_right = 216.0
+offset_bottom = 136.0
+
+[node name="MySlider" parent="." unique_id=772621511 instance=ExtResource("14_jpls8")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 144.0
+offset_right = 256.0
+offset_bottom = 164.0
+
+[node name="MySliderMinMax" parent="." unique_id=1451573831 instance=ExtResource("15_dwi0b")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 176.0
+offset_right = 256.0
+offset_bottom = 204.0
+
+[node name="MySliderVector" parent="." unique_id=1715463378 instance=ExtResource("16_cyq4s")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 214.0
+offset_right = 256.0
+offset_bottom = 246.0

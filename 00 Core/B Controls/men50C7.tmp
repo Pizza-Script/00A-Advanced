@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://b028ci8b8mhy4"]
+
+[ext_resource type="Script" path="res://Menu/menu.gd" id="1_ihllc"]
+[ext_resource type="LabelSettings" uid="uid://landwencpmqy" path="res://Menu/label.tres" id="2_oia23"]
+[ext_resource type="Texture2D" uid="uid://di5j86hxju6o6" path="res://Menu/Textures/menu.png" id="3_4nbvy"]
+[ext_resource type="Script" path="res://Menu/my_button.gd" id="3_fc1u4"]
+[ext_resource type="PackedScene" uid="uid://cxb0ala3shkxg" path="res://Menu/MySlider/my_slider.tscn" id="5_7c50e"]
+[ext_resource type="PackedScene" uid="uid://cer010g53uc70" path="res://Menu/MyCheckbox/my_checkbox.tscn" id="6_ixbul"]
+[ext_resource type="PackedScene" uid="uid://cf815vmb5xaf3" path="res://Menu/MyCounter/counter.tscn" id="6_m4exe"]
+[ext_resource type="PackedScene" uid="uid://cnburdj3g3vwb" path="res://Menu/MyGuide/my_guide.tscn" id="7_2p6xe"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_ihllc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 48.0
+offset_bottom = 21.0
+text = "00 fps - 0 units"
+label_settings = ExtResource("2_oia23")
+
+[node name="BtnMenu" type="TextureButton" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 20.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_4nbvy")
+script = ExtResource("3_fc1u4")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_bottom = -160.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="BoxGuide" parent="Panel" instance=ExtResource("7_2p6xe")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 24.0
+offset_right = 126.0
+offset_bottom = 40.0
+
+[node name="ChkDebug" parent="Panel" instance=ExtResource("6_ixbul")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 128.0
+offset_bottom = 72.0
+
+[node name="SldCount" parent="Panel" instance=ExtResource("5_7c50e")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 104.0
+offset_right = 128.0
+offset_bottom = 120.0
+
+[node name="Counter" parent="Panel" instance=ExtResource("6_m4exe")]
+offset_left = 8.0
+offset_top = 136.0
+offset_right = 128.0
+offset_bottom = 152.0

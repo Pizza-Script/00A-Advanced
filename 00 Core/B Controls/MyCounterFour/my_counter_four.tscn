@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://cf815vmb5xaf3"]
+
+[ext_resource type="Script" uid="uid://ijutntwxe04j" path="res://00 Core/B Controls/MyCounterFour/my_counter_four.gd" id="1_x67vh"]
+[ext_resource type="FontFile" uid="uid://duxainnndtyei" path="res://00 Core/E Assets/Fonts/5x5 mono.ttf" id="2_ajxyp"]
+[ext_resource type="Texture2D" uid="uid://dy6qdiuej501n" path="res://00 Core/B Controls/MyCounterFour/Texture/my_counter_four.png" id="3_swnxm"]
+[ext_resource type="Script" uid="uid://j4mokvq7k3q3" path="res://00 Core/B Controls/MyButton/my_button.gd" id="4_a0t1a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fsdva"]
+font = ExtResource("2_ajxyp")
+font_size = 8
+
+[node name="MyCounterFour" type="Control" unique_id=60179964]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 112.0
+offset_bottom = 24.0
+mouse_filter = 2
+script = ExtResource("1_x67vh")
+_label_settings = SubResource("LabelSettings_fsdva")
+
+[node name="LblTitle" type="Label" parent="." unique_id=1895302765]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 41.0
+offset_bottom = 6.0
+text = "COUNTER"
+label_settings = SubResource("LabelSettings_fsdva")
+
+[node name="LblCount" type="Label" parent="." unique_id=1575241664]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -48.0
+offset_top = -2.0
+offset_bottom = 6.0
+grow_horizontal = 0
+pivot_offset_ratio = Vector2(1, 0)
+text = "100"
+label_settings = SubResource("LabelSettings_fsdva")
+horizontal_alignment = 2
+
+[node name="BtnSubB" type="TextureButton" parent="." unique_id=1270068309]
+process_mode = 3
+layout_mode = 0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_right = 27.0
+pivot_offset_ratio = Vector2(0, 1)
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_swnxm")
+script = ExtResource("4_a0t1a")
+
+[node name="Label" type="Label" parent="BtnSubB" unique_id=1788676473]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+text = "-100"
+label_settings = SubResource("LabelSettings_fsdva")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnSubA" type="TextureButton" parent="." unique_id=595549599]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -16.0
+offset_right = 55.0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_swnxm")
+script = ExtResource("4_a0t1a")
+
+[node name="Label" type="Label" parent="BtnSubA" unique_id=803576660]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+text = "-10"
+label_settings = SubResource("LabelSettings_fsdva")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnAddA" type="TextureButton" parent="." unique_id=333916515]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -16.0
+offset_right = -28.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_swnxm")
+script = ExtResource("4_a0t1a")
+
+[node name="Label" type="Label" parent="BtnAddA" unique_id=1734466224]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+text = "10"
+label_settings = SubResource("LabelSettings_fsdva")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnAddB" type="TextureButton" parent="." unique_id=48101911]
+process_mode = 3
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -16.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_swnxm")
+script = ExtResource("4_a0t1a")
+
+[node name="Label" type="Label" parent="BtnAddB" unique_id=591157506]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+text = "100"
+label_settings = SubResource("LabelSettings_fsdva")
+horizontal_alignment = 1
+vertical_alignment = 1

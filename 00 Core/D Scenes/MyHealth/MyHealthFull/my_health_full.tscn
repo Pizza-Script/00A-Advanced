@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bteuq25xtej7e"]
+
+[ext_resource type="Script" uid="uid://dntl62ejxtwv5" path="res://00 Core/D Scenes/MyHealth/MyHealthFull/my_health_full.gd" id="1_nr5fj"]
+[ext_resource type="Texture2D" uid="uid://d2jv117aq3j7r" path="res://00 Core/D Scenes/MyHealth/MyHealthFull/base_body.png" id="2_y8mep"]
+[ext_resource type="Texture2D" uid="uid://cd5hoehuuwdgv" path="res://00 Core/D Scenes/MyHealth/MyHealthFull/base_head.png" id="3_fnp8s"]
+[ext_resource type="Texture2D" uid="uid://taq7yr2mghn" path="res://00 Core/D Scenes/MyHealth/MyHealthFull/base_tail.png" id="4_akljx"]
+[ext_resource type="Texture2D" uid="uid://bej10uckrpb1i" path="res://00 Core/D Scenes/MyHealth/MyHealthFull/live_body.png" id="5_7is5v"]
+[ext_resource type="Texture2D" uid="uid://bfbn0n36nifdf" path="res://00 Core/D Scenes/MyHealth/MyHealthFull/live_head.png" id="6_5aapu"]
+[ext_resource type="Texture2D" uid="uid://4th6epdbmpit" path="res://00 Core/D Scenes/MyHealth/MyHealthFull/live_tail.png" id="7_44eni"]
+
+[node name="MyHealthFull" type="HBoxContainer"]
+theme_override_constants/separation = 0
+script = ExtResource("1_nr5fj")
+_texture_array = Array[Texture2D]([ExtResource("3_fnp8s"), ExtResource("2_y8mep"), ExtResource("4_akljx"), ExtResource("6_5aapu"), ExtResource("5_7is5v"), ExtResource("7_44eni")])

@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bpwrgbrynbirg"]
+
+[ext_resource type="FontFile" uid="uid://duxainnndtyei" path="res://00 Core/E Assets/Fonts/5x5 mono.ttf" id="1_30wg7"]
+
+[resource]
+font = ExtResource("1_30wg7")
+font_size = 8

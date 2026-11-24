@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cnburdj3g3vwb"]
+
+[ext_resource type="Texture2D" uid="uid://cuymy05lo5hfp" path="res://00 Core/B Controls/MyGuide/Mouse/mouse_left.png" id="1_yhukg"]
+[ext_resource type="LabelSettings" uid="uid://cs5ienm1a5ul2" path="res://00 Core/B Controls/MyGuide/my_guide.tres" id="2_odvtq"]
+
+[node name="MyGuide" type="HBoxContainer" unique_id=2066576823]
+offset_right = 116.0
+offset_bottom = 16.0
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1558447528]
+layout_mode = 2
+texture = ExtResource("1_yhukg")
+
+[node name="Label" type="Label" parent="." unique_id=618043379]
+layout_mode = 2
+text = "GUIDE"
+label_settings = ExtResource("2_odvtq")
+vertical_alignment = 1

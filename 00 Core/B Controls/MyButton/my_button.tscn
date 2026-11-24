@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cbb2a0hih5r1h"]
+
+[ext_resource type="Script" uid="uid://j4mokvq7k3q3" path="res://00 Core/B Controls/MyButton/my_button.gd" id="2_edvqp"]
+
+[node name="Button" type="TextureButton" unique_id=742443023]
+process_mode = 3
+offset_right = 64.0
+offset_bottom = 16.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+script = ExtResource("2_edvqp")

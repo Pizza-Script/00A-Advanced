@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://b028ci8b8mhy4"]
+
+[ext_resource type="Script" uid="uid://lo7n8k247e0f" path="res://00 Core/D Scenes/Menu/MenuToggle/menu_toggle.gd" id="1_ihllc"]
+[ext_resource type="LabelSettings" uid="uid://cs5ienm1a5ul2" path="res://00 Core/B Controls/MyGuide/my_guide.tres" id="3_h27jp"]
+[ext_resource type="Texture2D" uid="uid://di5j86hxju6o6" path="res://00 Core/D Scenes/Menu/MenuToggle/menu.png" id="3_rrr4t"]
+[ext_resource type="Script" uid="uid://j4mokvq7k3q3" path="res://00 Core/B Controls/MyButton/my_button.gd" id="4_dfpo4"]
+[ext_resource type="PackedScene" uid="uid://dtx6756kbb0vq" path="res://00 Core/B Controls/MySlider/my_slider.tscn" id="5_7c50e"]
+[ext_resource type="Texture2D" uid="uid://dktx7sv7p02n3" path="res://00 Core/B Controls/MyGuide/KeyOthers/button_escape.png" id="5_jqu3s"]
+[ext_resource type="PackedScene" uid="uid://cer010g53uc70" path="res://00 Core/B Controls/MyCheckBox/my_check_box.tscn" id="6_ixbul"]
+[ext_resource type="PackedScene" uid="uid://cf815vmb5xaf3" path="res://00 Core/B Controls/MyCounterFour/my_counter_four.tscn" id="6_m4exe"]
+[ext_resource type="PackedScene" uid="uid://cnburdj3g3vwb" path="res://00 Core/B Controls/MyGuide/my_guide.tscn" id="7_2p6xe"]
+[ext_resource type="PackedScene" uid="uid://dlpajhgov1bhe" path="res://00 Core/B Controls/MyCheckRadio/my_check_radio.tscn" id="10_efe2s"]
+[ext_resource type="PackedScene" uid="uid://fudn7c8b4u3v" path="res://00 Core/B Controls/MyInput/my_input.tscn" id="11_to5f4"]
+
+[node name="MenuToggle" type="Control" unique_id=1183571667]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ihllc")
+
+[node name="Panel" type="Panel" parent="." unique_id=622710587]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 232.0
+grow_horizontal = 0
+
+[node name="BoxEscape" type="HBoxContainer" parent="Panel" unique_id=1012178130]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 120.0
+offset_bottom = 24.0
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/BoxEscape" unique_id=1410892382]
+layout_mode = 2
+texture = ExtResource("5_jqu3s")
+
+[node name="Label" type="Label" parent="Panel/BoxEscape" unique_id=902202562]
+layout_mode = 2
+text = "Toggle Menu"
+label_settings = ExtResource("3_h27jp")
+vertical_alignment = 1
+
+[node name="BoxGuide" parent="Panel" unique_id=737435642 instance=ExtResource("7_2p6xe")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 120.0
+offset_bottom = 48.0
+
+[node name="ChkDebug" parent="Panel" unique_id=650208065 instance=ExtResource("6_ixbul")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 54.0
+offset_right = 118.0
+offset_bottom = 78.0
+
+[node name="MyInput" parent="Panel" unique_id=231634593 instance=ExtResource("11_to5f4")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 77.0
+offset_right = 120.0
+offset_bottom = 98.0
+
+[node name="RadSample" parent="Panel" unique_id=454313813 instance=ExtResource("10_efe2s")]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 124.0
+offset_right = 120.0
+offset_bottom = 148.0
+
+[node name="SldCount" parent="Panel" unique_id=442992696 instance=ExtResource("5_7c50e")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 173.0
+offset_right = 120.0
+offset_bottom = 189.0
+
+[node name="Counter" parent="Panel" unique_id=2078067107 instance=ExtResource("6_m4exe")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 205.0
+offset_right = 120.0
+offset_bottom = 228.0
+
+[node name="BtnMenu" type="TextureButton" parent="." unique_id=235940606]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -24.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 24.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_rrr4t")
+script = ExtResource("4_dfpo4")

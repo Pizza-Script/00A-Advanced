@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cm6okxyl6qyy4"]
+
+[ext_resource type="Script" uid="uid://c5ta1e5d6peua" path="res://00 Core/D Scenes/Menu/MenuStart/menu_start.gd" id="1_62xc5"]
+[ext_resource type="Texture2D" uid="uid://d0oejagglv60i" path="res://00 Core/D Scenes/Menu/MenuStart/play.png" id="2_kdacy"]
+[ext_resource type="Script" uid="uid://j4mokvq7k3q3" path="res://00 Core/B Controls/MyButton/my_button.gd" id="3_2c3qb"]
+[ext_resource type="LabelSettings" uid="uid://bpwrgbrynbirg" path="res://00 Core/E Assets/Fonts/my_label.tres" id="6_efrr6"]
+
+[node name="MenuStart" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_62xc5")
+
+[node name="BtnPlay" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 8.0
+offset_right = 632.0
+offset_bottom = 24.0
+texture_normal = ExtResource("2_kdacy")
+script = ExtResource("3_2c3qb")
+
+[node name="LblMiddle" type="Label" parent="."]
+layout_mode = 0
+offset_top = 184.0
+offset_right = 640.0
+offset_bottom = 200.0
+text = "Space to Start"
+label_settings = ExtResource("6_efrr6")
+horizontal_alignment = 1
+uppercase = true

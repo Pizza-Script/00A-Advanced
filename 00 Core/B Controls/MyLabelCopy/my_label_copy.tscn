@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://copqtn23jftu"]
+
+[ext_resource type="LabelSettings" uid="uid://bpwrgbrynbirg" path="res://00 Core/E Assets/Fonts/my_label.tres" id="1_i32cq"]
+[ext_resource type="Script" uid="uid://dasf826pc7poj" path="res://00 Core/B Controls/MyLabelCopy/my_label_copy.gd" id="2_qpjde"]
+
+[node name="MyLabelCopy" type="Label" unique_id=101876145]
+offset_right = 78.0
+offset_bottom = 8.0
+mouse_filter = 1
+text = "MY LABEL COPY"
+label_settings = ExtResource("1_i32cq")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_qpjde")

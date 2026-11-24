@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cer010g53uc70"]
+
+[ext_resource type="Texture2D" uid="uid://qmhufaj1wbfh" path="res://Menu/MyCheckbox/checkbox_checked.png" id="1_cfty0"]
+[ext_resource type="Texture2D" uid="uid://vpt1jwo4vof3" path="res://Menu/MyCheckbox/checkbox_unchecked.png" id="2_c7u52"]
+[ext_resource type="Script" path="res://Menu/MyCheckbox/my_checkbox.gd" id="3_cw5ry"]
+[ext_resource type="LabelSettings" uid="uid://landwencpmqy" path="res://Menu/label.tres" id="4_2dg1c"]
+
+[node name="ChkDebug" type="CheckBox"]
+offset_right = 80.0
+offset_bottom = 24.0
+theme_override_icons/checked = ExtResource("1_cfty0")
+theme_override_icons/checked_disabled = ExtResource("1_cfty0")
+theme_override_icons/unchecked = ExtResource("2_c7u52")
+theme_override_icons/unchecked_disabled = ExtResource("2_c7u52")
+script = ExtResource("3_cw5ry")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 2.0
+offset_right = 72.0
+offset_bottom = 18.0
+text = "Checkbox
+"
+label_settings = ExtResource("4_2dg1c")
+vertical_alignment = 1

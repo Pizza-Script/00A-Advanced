@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bwnnq5ept6k5s"]
+
+[ext_resource type="Script" uid="uid://p5sjrdpoutjc" path="res://00 Core/B Controls/MyButtonBg/my_button_bg.gd" id="1_c6wyd"]
+[ext_resource type="Texture2D" uid="uid://jsl33o74vw7s" path="res://00 Core/B Controls/MyButtonBg/my_button_bg.png" id="2_0wcqo"]
+[ext_resource type="LabelSettings" uid="uid://bpwrgbrynbirg" path="res://00 Core/E Assets/Fonts/my_label.tres" id="2_fxstv"]
+
+[node name="MyButtonBg" type="TextureButton" unique_id=1022440833]
+offset_right = 64.0
+offset_bottom = 16.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+script = ExtResource("1_c6wyd")
+_image = ExtResource("2_0wcqo")
+_label_settings = ExtResource("2_fxstv")
+metadata/_custom_type_script = "uid://j4mokvq7k3q3"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1500819502]
+modulate = Color(0.07058824, 0.30588236, 0.5372549, 1)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_0wcqo")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Background" type="ColorRect" parent="." unique_id=1948772993]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.07058824, 0.30588236, 0.5372549, 1)
+
+[node name="Border" type="ReferenceRect" parent="." unique_id=1320233929]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+border_color = Color(1, 1, 1, 1)
+border_width = 0.5
+editor_only = false
+
+[node name="Label" type="Label" parent="." unique_id=228335778]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "BUTTON BG"
+label_settings = ExtResource("2_fxstv")
+horizontal_alignment = 1
+vertical_alignment = 1
