@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bf135ljod6npt" path="res://01 Node Enum/node_enum.gd" id="1_2bw64"]
 [ext_resource type="PackedScene" uid="uid://bu8j21vaqgtl1" path="res://01 Node Enum/node_enum_item.tscn" id="2_uuak5"]
-[ext_resource type="Script" uid="uid://1pyktbtr5qk1" path="res://01 Node Enum/node_enum_item.gd" id="3_uuak5"]
 
 [node name="NodeEnum" type="Node2D" unique_id=1988211627]
 script = ExtResource("1_2bw64")
@@ -10,9 +9,8 @@ script = ExtResource("1_2bw64")
 [node name="000_NodeA" parent="." unique_id=1811337270 instance=ExtResource("2_uuak5")]
 position = Vector2(160, 90)
 
-[node name="001_NodeB" type="Sprite2D" parent="." unique_id=1256617618 instance=ExtResource("2_uuak5")]
+[node name="001_NodeB" parent="." unique_id=1256617618 instance=ExtResource("2_uuak5")]
 position = Vector2(160, 58)
-script = ExtResource("3_uuak5")
 
 [node name="002_NodeC" parent="." unique_id=1408875187 instance=ExtResource("2_uuak5")]
 position = Vector2(192, 90)

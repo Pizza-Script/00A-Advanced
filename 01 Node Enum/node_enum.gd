@@ -12,35 +12,24 @@ enum Nodes
 }
 
 #region Tools
-@export_group("Nodes Setup")
-@export var _node_scene: PackedScene = preload("node_enum_item.tscn")
-@export var _icon_temp: String = "placeholder.png"
+@export_group("Node Settings")
 @export var _icon_folder: String = "Icons"
 @export var _info_folder: String = "Infos"
-@export_tool_button("Setup Nodes", "VcsBranches") var setup = _setup
+@export var _node_scene: PackedScene = preload("node_enum_item.tscn")
 
-@export_group("Nodes Positions")
-@export_tool_button("Position Save", "Save") var place_save = _place.bind("save")
-@export_tool_button("Position Load", "ScriptExtend") var place_load = _place.bind("load")
+@export_group("Node Create")
+@export_tool_button("Node Spawn", "VcsBranches") var spawn = _spawn
+@export_tool_button("Node Icons", "VcsBranches") var icons = _icons
+@export_tool_button("Node Infos", "VcsBranches") var infos = _infos
+
+@export_group("Node Position")
+@export_tool_button("Position Store", "Save") var store = _place.bind(false)
+@export_tool_button("Position Apply", "ScriptExtend") var place = _place.bind(true)
 
 @export_group("", "")
-@export_tool_button("Refresh Nodes", "PreviewRotate") var refresh = _refresh
+@export_tool_button("Node Refresh", "PreviewRotate") var refresh = _refresh
 
 var _node_array: Array[NodeEnumItem]
-
-var _setup_gaurd: bool = false
-
-
-func _setup() -> void:
-	if _setup_gaurd == true:													# true when icon/info is renamed or created
-		printerr("Icon or Info changed, must restart editor")
-		return
-
-	_spawn()
-	_icons()
-	_infos()
-
-	_place("load")
 
 
 func _refresh() -> void:
@@ -58,13 +47,13 @@ func _refresh() -> void:
 		_node_array[index].set_info(load(info_path + info_array[index]))
 
 
-func _spawn() -> void:                                                          # NOTE: CREATE NODES
+func _spawn() -> void:															# NOTE: CREATE NODES
 	var enum_keys: PackedStringArray = Nodes.keys()
 	var node_scene: PackedScene = _node_scene
 	var node_parent: Node2D = self
 	var node_fresh: NodeEnumItem
 
-	var node_array: Array[NodeEnumItem]                                         # NOTE: GET CURRENT NODES
+	var node_array: Array[NodeEnumItem]											# NOTE: GET CURRENT NODES
 	var node_names: PackedStringArray
 	for node in node_parent.get_children():
 		node_array.append(node)
@@ -78,29 +67,29 @@ func _spawn() -> void:                                                          
 	node_extra.resize(node_array.size())
 	node_extra.fill(true)
 
-	for index in enum_keys.size():                                              # NOTE A: NAME CHECK
-		var enum_name: String = enum_keys[index].to_pascal_case()               # SKILL_NAME > SkillName
+	for index in enum_keys.size():												# NOTE A: NAME CHECK
+		var enum_name: String = enum_keys[index].to_pascal_case()				# SKILL_NAME > SkillName
 
-		if node_names.has(enum_name) == true:                                   # file name & enum name matches
-			var node_index: int = node_names.find(enum_name)                    # index in parent
+		if node_names.has(enum_name) == true:									# file name & enum name matches
+			var node_index: int = node_names.find(enum_name)					# index in parent
 			var name_index: String = node_array[node_index].name.substr(0, 3) 	# index in name
 
 			if name_index.is_valid_int() == false:								# int(invalid_int string) = 0
 				name_index = "-1"
 
-			if index != int(name_index):                                        # enum index & file name index does not match
+			if index != int(name_index):										# enum index & file name index does not match
 				var old_name: = node_array[node_index].name
-				var new_name: = "%03d_" % index + enum_name                     # SkillName > 001_SkillName
+				var new_name: = "%03d_" % index + enum_name						# SkillName > 001_SkillName
 
 				node_parent.move_child(node_array[node_index], index)
 				node_array[node_index].name = new_name
 				print("Renamed Node: %s to %s" % [old_name, new_name])
 
-			node_extra[node_index] = false                                      # node has enum
+			node_extra[node_index] = false										# node has enum
 		else:
-			enum_extra.append(index)                                            # enum w/o a node
+			enum_extra.append(index)											# enum w/o a node
 
-	if node_extra.has(true) || enum_extra.is_empty() == false:                  # NOTE B: INDEX CHECK
+	if node_extra.has(true) || enum_extra.is_empty() == false:					# NOTE B: INDEX CHECK
 		var name_index_array: PackedInt32Array									# index in name
 		var node_index_array: PackedInt32Array									# index in parent
 		for index in node_array.size():
@@ -114,7 +103,7 @@ func _spawn() -> void:                                                          
 		for enum_index in enum_extra:											# enum w/o file
 			array_index += 1
 
-			if name_index_array.has(enum_index):                                # extras index has enum index
+			if name_index_array.has(enum_index):								# extras index has enum index
 				var name_index: int = name_index_array.find(enum_index)
 				var node_index: int = node_index_array[name_index]
 
@@ -122,13 +111,13 @@ func _spawn() -> void:                                                          
 				var new_name: String = "%03d_" % enum_index + enum_keys[enum_index].to_pascal_case()
 
 				node_parent.move_child(node_array[node_index], enum_index)
-				node_array[node_index].name = new_name                          # 001_SkillName
+				node_array[node_index].name = new_name							# 001_SkillName
 				print("Renamed Node: %s to %s" % [old_name, new_name])
 
 				node_extra[node_index] = false
 				enum_extra[array_index] = -1
 
-	for index in enum_extra:                                                	# NOTE C: NODE MISSING
+	for index in enum_extra:													# NOTE C: NODE MISSING
 		if index != -1:
 			node_fresh = node_scene.instantiate()
 			node_parent.add_child(node_fresh)
@@ -137,7 +126,7 @@ func _spawn() -> void:                                                          
 			node_fresh.name = "%03d_" % index + enum_keys[index].to_pascal_case()
 			print("Created Node: %s" % node_fresh.name)
 
-	if node_extra.has(true):                                                    # NOTE D: NODE EXTRA
+	if node_extra.has(true):													# NOTE D: NODE EXTRA
 		for index in node_extra.size():
 			if node_extra[index] == true:
 				print("Extra Node: %%s" % node_array[index])
@@ -178,7 +167,6 @@ func _icons() -> void:
 
 				DirAccess.rename_absolute(file_path + old_name, file_path + new_name)
 				print("Renamed Icon: %s to %s" % [old_name, new_name])
-				_setup_gaurd = true
 
 			file_extra[file_index] = false										# file has enum
 		else:
@@ -207,7 +195,6 @@ func _icons() -> void:
 
 				DirAccess.rename_absolute(file_path + old_name, file_path + new_name)
 				print("Renamed Icon: %s to %s" % [old_name, new_name])
-				_setup_gaurd = true
 
 				file_extra[file_index] = false
 				enum_extra[array_index] = -1
@@ -215,13 +202,11 @@ func _icons() -> void:
 	for index in enum_extra:													# NOTE C: FILE MISSING
 		if index != -1:
 			var file_name: = "%03d_" % index + enum_keys[index].to_lower() + ".png"
-			DirAccess.copy_absolute(file_path + _icon_temp, file_path + file_name)
-			print("Created Icon: %s" % file_path + file_name)
-			_setup_gaurd = true
+			print("Missing Icon: %s" % file_path + file_name)
 
 	if file_extra.has(true):													# NOTE D: FILE EXTRA
 		for index in file_extra.size():
-			if file_extra[index] == true && file_array[index] != _icon_temp:
+			if file_extra[index] == true:
 				print("Extra Icon : %s" % file_array[index])
 
 	notify_property_list_changed()												# refresh inspector
@@ -262,7 +247,6 @@ func _infos() -> void:
 
 				DirAccess.rename_absolute(file_path + old_name, file_path + new_name)
 				print("Renamed Info: %s to %s" % [old_name, new_name])
-				_setup_gaurd = true
 
 			file_extra[file_index] = false										# file has enum
 		else:
@@ -291,7 +275,6 @@ func _infos() -> void:
 
 				DirAccess.rename_absolute(file_path + old_name, file_path + new_name)
 				print("Renamed Info: %s to %s" % [old_name, new_name])
-				_setup_gaurd = true
 
 				file_extra[file_index] = false
 				enum_extra[array_index] = -1
