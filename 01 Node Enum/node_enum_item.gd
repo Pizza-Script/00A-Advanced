@@ -1,0 +1,2 @@
+class_name NodeEnumItem
+extends Sprite2D

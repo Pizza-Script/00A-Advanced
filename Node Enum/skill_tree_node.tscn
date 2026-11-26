@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://bu8j21vaqgtl1"]
-
-[ext_resource type="Script" uid="uid://1pyktbtr5qk1" path="res://Node Enum/skill_tree_node.gd" id="1_xwnqb"]
-
-[node name="SkillTreeNode" type="Sprite2D" unique_id=1811337270]
-script = ExtResource("1_xwnqb")

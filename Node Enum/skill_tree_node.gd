@@ -1,2 +1,0 @@
-class_name SkillTreeNode
-extends Sprite2D

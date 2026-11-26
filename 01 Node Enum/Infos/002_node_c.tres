@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="SkillTreeInfo" format=3 uid="uid://b7paa0pmgr7xt"]
+
+[ext_resource type="Script" uid="uid://dnxamwwf17twv" path="res://01 Node Enum/node_enum_info.gd" id="1_4wkvf"]
+
+[resource]
+script = ExtResource("1_4wkvf")
