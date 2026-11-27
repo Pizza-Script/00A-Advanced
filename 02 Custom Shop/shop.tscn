@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://corh7g6w14e7q"]
+
+[ext_resource type="Script" uid="uid://cqgckg2t3u35l" path="res://02 Custom Shop/shop.gd" id="1_udv0w"]
+[ext_resource type="PackedScene" uid="uid://5sf5lnr7dwlo" path="res://02 Custom Shop/shop_item.tscn" id="2_7i1rn"]
+[ext_resource type="Script" uid="uid://bg3leb2vmvyuq" path="res://02 Custom Shop/shop_info.gd" id="2_c2wb1"]
+[ext_resource type="Resource" uid="uid://bv4ga40nix3p0" path="res://02 Custom Shop/Infos/000_minions_unlock.tres" id="4_yrw0h"]
+[ext_resource type="Resource" uid="uid://b6xdfi5cod38s" path="res://02 Custom Shop/Infos/001_copper_add.tres" id="5_oc4uy"]
+[ext_resource type="Resource" uid="uid://dxc8sq8dyt6ma" path="res://02 Custom Shop/Infos/002_copper_add_2.tres" id="6_qwn6r"]
+[ext_resource type="Resource" uid="uid://beh1u7a6x0jo8" path="res://02 Custom Shop/Infos/003_copper_percent.tres" id="7_boedm"]
+[ext_resource type="Resource" uid="uid://bk2bf6eqjbv5f" path="res://02 Custom Shop/Infos/004_silver_add.tres" id="8_k3yfa"]
+[ext_resource type="Resource" uid="uid://bbtmafo47n716" path="res://02 Custom Shop/Infos/005_silver_percent.tres" id="9_v20da"]
+
+[node name="Shop" type="Control" unique_id=1562597838]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_udv0w")
+_skill_infos = Dictionary[int, ExtResource("2_c2wb1")]({
+0: ExtResource("4_yrw0h"),
+1: ExtResource("5_oc4uy"),
+2: ExtResource("6_qwn6r"),
+3: ExtResource("7_boedm"),
+4: ExtResource("8_k3yfa"),
+5: ExtResource("9_v20da")
+})
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=730944146]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=603424479]
+layout_mode = 2
+
+[node name="000_MinionsUnlock" parent="ScrollContainer/VBoxContainer" unique_id=638078042 node_paths=PackedStringArray("unlock_target") instance=ExtResource("2_7i1rn")]
+layout_mode = 2
+_info = ExtResource("4_yrw0h")
+unlock_start = true
+unlock_target = {
+NodePath("../001_CopperAdd"): 1,
+NodePath("../004_SilverAdd"): 1
+}
+
+[node name="001_CopperAdd" parent="ScrollContainer/VBoxContainer" unique_id=189421331 node_paths=PackedStringArray("unlock_target") instance=ExtResource("2_7i1rn")]
+layout_mode = 2
+_info = ExtResource("5_oc4uy")
+unlock_target = {
+NodePath("../002_CopperAdd2"): 1
+}
+
+[node name="002_CopperAdd2" parent="ScrollContainer/VBoxContainer" unique_id=198217192 instance=ExtResource("2_7i1rn")]
+layout_mode = 2
+_info = ExtResource("6_qwn6r")
+
+[node name="003_CopperPercent" parent="ScrollContainer/VBoxContainer" unique_id=421301425 instance=ExtResource("2_7i1rn")]
+layout_mode = 2
+_info = ExtResource("7_boedm")
+
+[node name="004_SilverAdd" parent="ScrollContainer/VBoxContainer" unique_id=65516514 node_paths=PackedStringArray("unlock_target") instance=ExtResource("2_7i1rn")]
+layout_mode = 2
+_info = ExtResource("8_k3yfa")
+unlock_target = {
+NodePath("../005_SilverPercent"): 1
+}
+
+[node name="005_SilverPercent" parent="ScrollContainer/VBoxContainer" unique_id=1716319983 instance=ExtResource("2_7i1rn")]
+layout_mode = 2
+_info = ExtResource("9_v20da")

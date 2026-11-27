@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShopInfo" format=3 uid="uid://beh1u7a6x0jo8"]
+
+[ext_resource type="Script" uid="uid://bg3leb2vmvyuq" path="res://02 Custom Shop/shop_info.gd" id="1_7m82i"]
+
+[resource]
+script = ExtResource("1_7m82i")
+index = 3
+title = "Copper Percent"
+cost_base = 500.0
+cost_mult = 0.5
+level_max = 5
+value = 0.2

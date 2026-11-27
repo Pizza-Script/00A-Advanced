@@ -7,7 +7,7 @@ func _save() -> void:
 		_vars = _vars,															# "_vars" = _vars (lua syntax)
 	}																			# prevents misspelling
 
-	if MySave.init(self, vars) == false:										# load data once
+	if MySave.init(self, vars) == false:										# load data to vars
 		_set_data(_vars)														# use loaded data
 
 	MySave.save(self, vars)
@@ -43,9 +43,6 @@ func _load() -> void:															# NOTE: LOAD FILE TO DICTIONARY
 
 func init(node: Node, vars: Dictionary) -> bool:								# NOTE: DICTIONARY TO NODE VARS
 	var node_name: String = node.name
-
-	if save_data.has(node_name) == true:										# only load once
-		return true
 
 	if save_data.has(node_name) == false \
 	|| save_data[node_name].is_empty() == true:									# no save data
