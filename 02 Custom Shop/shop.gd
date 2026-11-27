@@ -236,8 +236,8 @@ func _on_skill_exited() -> void:
 @export_tool_button("Node Infos", "VcsBranches") var infos = _infos
 
 @export_group("Node Position")
-@export_tool_button("Position Store", "Save") var store = _place.bind(false)
-@export_tool_button("Position Apply", "ScriptExtend") var place = _place.bind(true)
+@export_tool_button("Position Store", "Save") var store = _place.bind("save")
+@export_tool_button("Position Apply", "ScriptExtend") var place = _place.bind("load")
 
 @export_group("", "")
 @export_tool_button("Node Refresh", "PreviewRotate") var refresh = _refresh
