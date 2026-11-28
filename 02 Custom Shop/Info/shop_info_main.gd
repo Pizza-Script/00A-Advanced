@@ -1,8 +1,13 @@
 @tool
-class_name Shop
+class_name ShopInfoMain
 extends Control
 
 # 086 Coin Flip Auto
+# edit "info" resource manually
+# read "info" when loading
+
+# NOTE: unlock_start / unlock_target reset on node spawn
+# can't save "node in scene" reference on resources
 
 # _vars()
 	# load all item nodes
@@ -54,11 +59,11 @@ enum Stats {
 
 @export var _skill_infos: Dictionary[Skill, ShopInfo]
 
-var _skill_array: Array[ShopItem]
+var _skill_array: Array[ShopInfoItem]
 var _skill_level: PackedInt32Array
 var _skill_price: Array[PackedInt64Array]
 
-var _score: int = 10000
+var _coins: int = 10000
 
 @onready var _parent: = get_child(0).get_child(0) as VBoxContainer
 
@@ -96,16 +101,16 @@ func _load() -> void:															# "_vars" = _vars (lua syntax)
 		_skill_level = _skill_level,
 	}
 
-	if MySave.init(self, vars) == false:										# load data to vars
-		if _skill_level.is_empty():												# handle empty containers here
-			_skill_level.resize(_skill_array.size())
+	if MySave.init(self, vars) == true:											# load data to vars
+		_skill_level.resize(_skill_array.size())								# no data, handle empty containers
 
-		for stat in Stats.size():
-			_update_stat(stat)
+	for stat in Stats.size():
+		_update_stat(stat)
 
-		for skill in _skill_array:
-			skill.set_level(_skill_level[skill.index])
-			skill.unlock_check()
+	for skill in _skill_array:
+		skill.set_level(_skill_level[skill.index])
+		skill.unlock_check()
+
 
 
 func _save() -> void:															# "_vars" = _vars (lua syntax)
@@ -121,8 +126,8 @@ func _ready() -> void:
 	_load()
 
 
-func set_score(value : int) -> void:
-	_score = value
+func set_coins(value : int) -> void:
+	_coins = value
 
 
 func _update_stat(skill: Skill, price: int = 0) -> void:						# NOTE: STATS UPDATE
@@ -154,7 +159,7 @@ func _on_skill_pressed(skill: Skill) -> void:									# NOTE: SKILL PRESS
 		return
 
 	var skill_price: int = _skill_price[skill][skill_level]
-	if _score < skill_price:													# score too low
+	if _coins < skill_price:													# score too low
 		return
 
 	_skill_level[skill] += 1
@@ -168,7 +173,7 @@ func _on_skill_pressed(skill: Skill) -> void:									# NOTE: SKILL PRESS
 
 
 func _on_skill_entered(skill: Skill) -> void:									# NOTE: SKILL HOVER
-	var node: ShopItem = _skill_array[skill]
+	var node: ShopInfoItem = _skill_array[skill]
 	var title: String = _skill_infos[skill].title
 
 	var level: int = _skill_level[skill]
@@ -228,7 +233,7 @@ func _on_skill_exited() -> void:
 @export_group("Node Settings")
 @export var _icon_folder: String = "Icons"
 @export var _info_folder: String = "Infos"
-@export var _node_scene: PackedScene = preload("shop_item.tscn")
+@export var _node_scene: PackedScene = preload("shop_info_item.tscn")
 
 @export_group("Node Create")
 @export_tool_button("Node Spawn", "VcsBranches") var spawn = _spawn
@@ -242,7 +247,7 @@ func _on_skill_exited() -> void:
 @export_group("", "")
 @export_tool_button("Node Refresh", "PreviewRotate") var refresh = _refresh
 
-var _node_array: Array[ShopItem]
+var _node_array: Array[ShopInfoItem]
 
 
 func _refresh() -> void:
@@ -262,7 +267,7 @@ func _refresh() -> void:
 		_infos()
 
 	for index in _node_array.size():
-		_node_array[index].set_icon(load(icon_path + icon_array[index]))
+		# _node_array[index].set_icon(load(icon_path + icon_array[index]))
 		_node_array[index].set_info(load(info_path + info_array[index]))
 
 
@@ -270,9 +275,9 @@ func _spawn() -> void:
 	var enum_keys: PackedStringArray = Skill.keys()
 	var node_scene: PackedScene = _node_scene
 	var node_parent: Control = _parent
-	var node_fresh: ShopItem
+	var node_fresh: ShopInfoItem
 
-	var node_array: Array[ShopItem]												# NOTE: GET CURRENT NODES
+	var node_array: Array[ShopInfoItem]												# NOTE: GET CURRENT NODES
 	var node_names: PackedStringArray
 	for node in node_parent.get_children():
 		node_array.append(node)
@@ -514,7 +519,7 @@ func _infos() -> void:
 
 
 func _place(type: String) -> void:
-	var node_array: Array[ShopItem]
+	var node_array: Array[ShopInfoItem]
 	for node in get_children():
 		node_array.append(node)
 

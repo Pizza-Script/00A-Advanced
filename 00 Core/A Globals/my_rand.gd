@@ -102,18 +102,28 @@ func reset() -> void:															# NOTE: RESET SEED STATE
 	_rng.seed = _decode_base26(_code)											# on seed set, same 1st state is given
 
 
+func init() -> void:
+	var vars: Dictionary = {													# "_vars" = _vars (lua syntax)
+		_code = _code,															# prevents misspelling
+		_seed = _seed,
+		_state = _state,
+	}
+
+	if MySave.init(self, vars) == true:											# load data to vars
+		random()																# no data, handle empty containers
+		_seed = get_seed()
+		_state = get_state()
+
+	_rng.seed = _seed
+	_rng.state = _state
+
+
 func save() -> void:
 	var vars: Dictionary = {													# vars to save (lua syntax)
 		_code = _code,
 		_seed = _seed,
 		_state = _state,
 	}
-
-	if MySave.is_loaded(self) == false:											# NOTE: LOAD DATA
-		MySave.init(self, vars)													# only load once
-
-		_rng.seed = _seed
-		_rng.state = _state
 
 	MySave.save(self, vars)
 

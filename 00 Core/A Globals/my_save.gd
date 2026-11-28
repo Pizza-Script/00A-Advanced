@@ -2,13 +2,21 @@
 extends Node
 
 """
-func _save() -> void:
-	var vars: Dictionary = {													# vars to save
+func _load() -> void:
+	var vars: Dictionary = {
 		_vars = _vars,															# "_vars" = _vars (lua syntax)
 	}																			# prevents misspelling
 
-	if MySave.init(self, vars) == false:										# load data to vars
-		_set_data(_vars)														# use loaded data
+	if MySave.init(self, vars) == true:											# load data to vars
+		_vars.resize(Item.size())												# no data, handle empty containers
+
+	_set_data(_vars)															# use loaded data
+
+
+func _save() -> void:
+	var vars: Dictionary = {													# "_vars" = _vars (lua syntax)
+		_vars = _vars,															# prevents misspelling
+	}
 
 	MySave.save(self, vars)
 """

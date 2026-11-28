@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c8c40i8s5j6af"]
+
+[ext_resource type="Script" uid="uid://cti5e5byi2deb" path="res://02 Custom Shop/Nested/shop_nested_item.gd" id="1_u5qs5"]
+[ext_resource type="Texture2D" uid="uid://dtkqp7kpuenxy" path="res://00 Core/E Assets/Circles/green.png" id="2_yyeus"]
+[ext_resource type="LabelSettings" uid="uid://bpwrgbrynbirg" path="res://00 Core/E Assets/Fonts/my_label.tres" id="3_5sxm3"]
+
+[node name="ShopNestedItem" type="TextureButton" unique_id=638078042]
+process_mode = 3
+custom_minimum_size = Vector2(112, 16)
+offset_right = 112.0
+offset_bottom = 16.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+script = ExtResource("1_u5qs5")
+metadata/_custom_type_script = "uid://j4mokvq7k3q3"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=962542954]
+layout_mode = 0
+offset_left = 92.0
+offset_right = 108.0
+offset_bottom = 16.0
+texture = ExtResource("2_yyeus")
+
+[node name="LblLevel" type="Label" parent="." unique_id=1359945149]
+layout_mode = 0
+offset_left = 92.0
+offset_top = -1.0
+offset_right = 108.0
+offset_bottom = 15.0
+text = "00"
+label_settings = ExtResource("3_5sxm3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LblTitle" type="Label" parent="." unique_id=2066632157]
+layout_mode = 0
+offset_right = 104.0
+offset_bottom = 16.0
+label_settings = ExtResource("3_5sxm3")

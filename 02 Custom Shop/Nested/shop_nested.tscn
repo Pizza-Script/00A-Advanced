@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://doffe8wj0i0f7"]
+
+[ext_resource type="Script" uid="uid://cseynef0qhpoq" path="res://02 Custom Shop/Nested/shop_nested.gd" id="1_5gupe"]
+[ext_resource type="PackedScene" uid="uid://c8c40i8s5j6af" path="res://02 Custom Shop/Nested/shop_nested_item.tscn" id="2_q1t2x"]
+[ext_resource type="Script" uid="uid://cti5e5byi2deb" path="res://02 Custom Shop/Nested/shop_nested_item.gd" id="3_s8h01"]
+
+[node name="ShopNested" type="Control" unique_id=1369798821]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5gupe")
+
+[node name="000_Copper" type="TextureButton" parent="." unique_id=638078042 instance=ExtResource("2_q1t2x")]
+process_mode = 3
+custom_minimum_size = Vector2(112, 16)
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 16.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+script = ExtResource("3_s8h01")
+metadata/_custom_type_script = "uid://j4mokvq7k3q3"
+
+[node name="001_Silver" type="TextureButton" parent="." unique_id=1978658821 instance=ExtResource("2_q1t2x")]
+process_mode = 3
+custom_minimum_size = Vector2(112, 16)
+layout_mode = 0
+offset_top = 24.0
+offset_right = 112.0
+offset_bottom = 40.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+script = ExtResource("3_s8h01")
+metadata/_custom_type_script = "uid://j4mokvq7k3q3"
+
+[node name="002_Gold" type="TextureButton" parent="." unique_id=763230193 instance=ExtResource("2_q1t2x")]
+process_mode = 3
+custom_minimum_size = Vector2(112, 16)
+layout_mode = 0
+offset_top = 48.0
+offset_right = 112.0
+offset_bottom = 64.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+script = ExtResource("3_s8h01")
+metadata/_custom_type_script = "uid://j4mokvq7k3q3"
+
+[node name="003_Tungsten" type="TextureButton" parent="." unique_id=233645264 instance=ExtResource("2_q1t2x")]
+process_mode = 3
+custom_minimum_size = Vector2(112, 16)
+layout_mode = 0
+offset_top = 72.0
+offset_right = 112.0
+offset_bottom = 88.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+script = ExtResource("3_s8h01")
+metadata/_custom_type_script = "uid://j4mokvq7k3q3"
+
+[node name="004_Palladium" type="TextureButton" parent="." unique_id=1917191385 instance=ExtResource("2_q1t2x")]
+process_mode = 3
+custom_minimum_size = Vector2(112, 16)
+layout_mode = 0
+offset_top = 96.0
+offset_right = 112.0
+offset_bottom = 112.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+script = ExtResource("3_s8h01")
+metadata/_custom_type_script = "uid://j4mokvq7k3q3"

@@ -1,11 +1,11 @@
 @tool
-class_name ShopItem
+class_name ShopInfoItem
 extends MyButton
 
 @export var _info: ShopInfo
 
 @export var unlock_start: bool													# unlocked on game load
-@export var unlock_target: Dictionary[ShopItem, int]							# unlock item(s) on level reach
+@export var unlock_target: Dictionary[ShopInfoItem, int]						# unlock item(s) on level reach
 
 var index: int
 
@@ -37,18 +37,18 @@ func set_level(level: int) -> void:
 
 
 func unlock_check() -> void:
-	if unlock_start == true:
-		_unlock()
+	if unlock_start == true:													# unlock self at start
+		unlock()
 
-	for target in unlock_target:
+	for target in unlock_target:												# unlock other items
 		if target.visible == true:
 			continue
 
 		if _level >= unlock_target[target]:
-			_unlock()
+			target.unlock()
 
 
-func _unlock() -> void:
+func unlock() -> void:
 	visible = true
 
 
